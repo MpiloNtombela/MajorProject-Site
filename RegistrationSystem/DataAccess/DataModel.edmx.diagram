@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69f27c2face14f1ba6d7e18e03b6dda6" Name="Diagram1">
+        <EntityTypeShape EntityType="MajorProjectDBModel.Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.BankDetail" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Guardian" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Payment" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.PaymentPlan" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.RegisteredSubject" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Registration" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Student" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Subject" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.SupportingDocument" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Teacher" Width="1.5" PointX="1.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.StudentDetail" Width="1.5" PointX="7.625" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_BankDetails_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Guardian_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Payment_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Registration_PaymentPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_RegisteredSubject_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_RegisteredSubject_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Registration_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_SupportingDocument_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Subject_Teacher" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.Notification" Width="1.5" PointX="8.375" PointY="5.75" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.C__MigrationHistory" Width="1.5" PointX="7.625" PointY="6.125" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.C__RefactorLog" Width="1.5" PointX="10.625" PointY="10.125" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.AspNetRole" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.AspNetUserClaim" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.AspNetUserLogin" Width="1.5" PointX="3" PointY="16" />
+        <EntityTypeShape EntityType="MajorProjectDBModel.AspNetUser" Width="1.5" PointX="0.75" PointY="4" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Admin_User" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Notification_ToAspNetUsers" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Student_User" />
+        <AssociationConnector Association="MajorProjectDBModel.FK_Teacher_User" />
+        <AssociationConnector Association="MajorProjectDBModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

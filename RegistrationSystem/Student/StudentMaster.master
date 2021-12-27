@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StudentMaster.master.cs" Inherits="RegistrationSystem.Student.StudentMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ExtraStyles" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraStyles"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container-lg mx-auto h-100">
+        <asp:PlaceHolder ID="PortalNav" runat="server">
+            <div class="container-sm d-flex my-3 justify-content-center position-fixed fixed-bottom mb-3 pe-none">
+                <div class="mw-100 shadow rounded-pill px-3 py-2 g-morph-dark d-none d-md-block">
+                    <a runat="server" href="~/Student/Details"
+                       class="btn rounded-pill btn-light mx-2 shadow-sm def-active pe-auto">student</a>
+                    <a runat="server" href="~/Student/Details/Registration" 
+                       class="btn rounded-pill btn-light mx-2 shadow-sm reg-active pe-auto">registration</a>
+                    <a runat="server" href="~/Student/Details/Bank" 
+                       class="btn rounded-pill btn-light mx-2 bank-active shadow-sm pe-auto">bank details</a>
+                    <a runat="server" href="~/Student/Details/Payments" 
+                       class="btn rounded-pill btn-light mx-2 shadow-sm pay-active pe-auto">payments</a>
+                </div>
+            </div>
+
+            <div id="navFab" class="fab d-block d-md-none">
+                <a class="btn-floating main-gradient">
+                    <i class="material-icons-round">menu</i>
+                </a>
+                <ul class="float-action">
+                    <li>
+                        <span class="label">student</span>
+                        <a class="btn-floating white def-active" href="~/Student/Details" runat="server">
+                            <i class="material-icons-outlined text-gradient">person</i>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="label">registration</span>
+                        <a class="btn-floating white reg-active" href="~/Student/Details/Registration" runat="server">
+                            <i class="material-icons-outlined text-gradient">badge</i>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="label">bank details</span>
+                        <a class="btn-floating white bank-active" href="~/Student/Details/Bank" runat="server">
+                            <i class="material-icons-outlined text-gradient">account_balance</i>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="label">payments</span>
+                        <a class="btn-floating white pay-active" href="~/Student/Details/Payments" runat="server">
+                            <i class="material-icons-outlined text-gradient">receipt</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </asp:PlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="MainContent">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ClientContent" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ClientContent"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ExtraScript" runat="server">
+    <asp:PlaceHolder ID="PortalNavScript" runat="server">
+        <script>
+            (() => {
+                document.addEventListener('DOMContentLoaded', function () {
+                    var el = document.getElementById("navFab");
+                    var isOpen = false;
+                    document.addEventListener('click', function (event) {
+                        var isClickInside = el.contains(event.target);
+                        if (!isClickInside) {
+                            el.querySelector(".float-action").classList.remove("action-open");
+                        } else {
+                            el.querySelector(".float-action").classList.add("action-open");
+                            isOpen = true;
+                        }
+                    });
+                });
+            })()
+        </script>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder runat="server" ID="ExtraScript"></asp:ContentPlaceHolder>
+</asp:Content>

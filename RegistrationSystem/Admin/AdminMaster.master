@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Base/SidebarLayout.master" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="RegistrationSystem.Admin.AdminMaster" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="ExtraStyles">
+    <asp:ContentPlaceHolder ID="ExtraStyles" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="SideLinks">
+    <a href="~/Admin/Default.aspx" runat="server" class='btn btn-block side-link home'>
+        <span class="material-icons-round link-icon">admin_panel_settings</span>
+        <span class="link-text">Admin</span>
+    </a>
+    <a href="~/Admin/Students/Default.aspx" class="btn btn-block side-link students" runat="server">
+        <span class="material-icons-round link-icon">people</span>
+        <span class="link-text">Students</span>
+    </a>
+    <a href="~/Admin/Subject.aspx" class="btn btn-block side-link page3" runat="server">
+        <span class="material-icons-outlined">book</span>
+        <span class="link-text">Subjects</span>
+    </a>
+  
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <asp:ContentPlaceHolder runat="server" ID="MainContent">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="ExtraScript">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraScript">
+    </asp:ContentPlaceHolder>
+</asp:Content>

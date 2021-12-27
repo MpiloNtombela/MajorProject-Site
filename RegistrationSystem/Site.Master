@@ -1,0 +1,205 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RegistrationSystem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%: Scripts.Render("~/bundles/files") %>
+        <%: Scripts.Render("~/bundles/axios") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css/extra"/>
+    <webopt:BundleReference runat="server" Path="~/Content/css"/>
+    <asp:ContentPlaceHolder ID="ExtraStyles" runat="server"></asp:ContentPlaceHolder>
+    <link href="~/Content/Static/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body class="bg-light">
+<form class="h-100" runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+            <%--Framework Scripts--%>
+            <asp:ScriptReference Name="MsAjaxBundle"/>
+            <asp:ScriptReference Name="jquery"/>
+            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js"/>
+            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js"/>
+            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js"/>
+            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js"/>
+            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js"/>
+            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js"/>
+            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js"/>
+            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js"/>
+            <asp:ScriptReference Name="WebFormsBundle"/>
+            <%--Site Scripts--%>
+        </Scripts>
+    </asp:ScriptManager>
+    <nav class="navbar navbar-expand-md bg-light fixed-top" style="z-index: 1031">
+        <div class="container-xxl align-items-baseline">
+            <a class="navbar-brand align-items-baseline text-primary" href="/">
+                <img class="m-0" width="35" height="25" runat="server" src="~/Content/Static/XeLogo.svg" alt="logo"/>Major Project
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#mainNavrbar"
+                aria-controls="mainNavrbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="material-icons-round">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavrbar">
+                <div class="navbar-nav">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="student">
+                                <ContentTemplate>
+                                    <a class="nav-link text-uppercase" runat="server" href="~/Student/Details">Student Portal</a>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="admin">
+                                <ContentTemplate>
+                                    <a class="nav-link text-uppercase" runat="server" href="~/Admin">Admin Portal</a>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                        <AnonymousTemplate>
+                            <a class="nav-link" runat="server" href="~/">Home</a>
+                            <a class="nav-link" runat="server" href="~/Public/Programs">Programs</a>
+                            <a class="nav-link" runat="server" href="~/Public/About">About Us</a>
+                            <a class="nav-link" runat="server" href="~/Public/Contact">Contact Us</a>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+                </div>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" runat="server" href="~/Account/Register">Register</a>
+                            <a class="nav-link" runat="server" href="~/Account/Login">Log in</a>
+                        </div>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <div class="navbar-nav ms-auto">
+                            <div class="dropdown" style="width: max-content">
+                                <a class="position-relative me-md-5"
+                                   href="!#"
+                                   role="button"
+                                   id="notiDropdown"
+                                   data-mdb-toggle="dropdown">
+                                    <span class="material-icons-round blue-grey-text darken-1 md-36">
+                                        notifications
+                                    </span>
+                                    <span id="notiDot" style="height: .75rem; width: .75rem; visibility: hidden" class="rounded-circle position-absolute end-0 d-inline-block me-1 mt-1 red"></span>
+                                </a>
+                                <ul style="min-width: 250px; max-width: 300px; max-height: 400px; overflow-y: auto" id="notiBody" class="dropdown-menu" aria-labelledby="notiDropdown">
+                                    <li class="px-2 py-3">No Notifications</li>
+                                </ul>
+                            </div>
+                            <div class="dropdown" style="width: max-content">
+                                <a class="chip blue-grey lighten-4 text-uppercase dropdown-toggle"
+                                   href="#"
+                                   role="button"
+                                   id="profileDropdown"
+                                   data-mdb-toggle="dropdown"
+                                   aria-expanded="false">
+                                    <span class="chip-text fw-bold blue-grey darken-1 text-white"><%= U.FirstName.Substring(0, 1) %><%= U.LastName.Substring(0, 1) %></span>
+                                    <strong class="text-gradient"><%= U.UserName %></strong>
+                                </a>
+                                <div class="dropdown-menu w-100 rounded" aria-labelledby="profileDropdown">
+                                    <div>
+                                        <a class="dropdown-item rounded-top" runat="server" href="~/Account/Manage">Manage Account</a>
+                                    </div>
+                                    <div>
+                                        <asp:LoginStatus CssClass="dropdown-item rounded-bottom"
+                                                         runat="server"
+                                                         LogoutAction="Redirect"
+                                                         LogoutText="logout"
+                                                         LogoutPageUrl="~/"
+                                                         OnLoggingOut="Unnamed_LoggingOut"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content h-100 p-0 p-sm-2">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</form>
+<div class="container body-content">
+    <asp:ContentPlaceHolder ID="ClientContent" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+<asp:PlaceHolder runat="server">
+    <%: Scripts.Render("~/bundles/bootstrap") %>
+    <%: Scripts.Render("~/bundles/bootstrapx") %>
+    <%: Scripts.Render("~/bundles/html2pdf") %>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+            function() {
+                var elems = document.querySelectorAll('select');
+                var instances = M.FormSelect.init(elems);
+                var mElems = document.querySelectorAll('.modal');
+                var mInstances = M.Modal.init(mElems);
+            });
+    </script>
+    <asp:PlaceHolder runat="server" ID="NotiScript">
+        <script>
+            var notiDot = document.getElementById("notiDot");
+            const notiDropdown = document.getElementById('notiDropdown');
+            const notiBody = document.getElementById('notiBody');
+
+            function getNoti() {
+                window.axios.get("/api/users/notifications/new")
+                    .then(res => {
+                        console.log(res.data);
+                        notiDot.style.visibility = res.data > 0 ? "visible" : "hidden";
+                    });
+                setTimeout(getNoti, 3000);
+            }
+
+            setTimeout(getNoti, 3000);
+            const notiContent = (t, b, url, seen) => {
+                return `<li class="w-100 ${seen ? 'text-muted' : 'light-blue lighten-4'}">
+                        <a class="dropdown-item" href=${url}>
+                            <span class="fw-bold d-block">${t}</span>
+                            <span class="tiny-text text-muted">${b}</span>
+                        </a>
+                    </li>`;
+            }
+
+            notiDropdown.addEventListener("show.mdb.dropdown",
+                () => {
+                    window.axios.get("/api/users/notifications")
+                        .then(res => {
+                            notiBody.innerHTML = "";
+                            if (res.data.length > 0) {
+                                for (let noti of res.data) {
+                                    notiBody.innerHTML += notiContent(noti["Title"], noti["Message"], noti["Url"], noti["Seen"]);
+                                }
+                                window.axios.get("/api/users/notifications/seen").then(res => res.data);
+
+                            } else {
+                                notiBody.innerHTML = `<li class="px-2 py-3">No Notifications</li>`;
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                        });
+                });
+
+        </script>
+    </asp:PlaceHolder>
+</asp:PlaceHolder>
+<asp:ContentPlaceHolder ID="ExtraScript" runat="server">
+</asp:ContentPlaceHolder>
+</body>
+</html>

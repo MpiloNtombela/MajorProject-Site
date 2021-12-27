@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PublicMaster.master.cs" Inherits="RegistrationSystem.Public.PublicMaster" %>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container-lg text-center">
+        <div class="banner main-gradient"></div>
+        <div class="card mt-5 col-xl-10 mx-auto bg-light shadow-sm">
+            <div class="card-body px-2 px-sm-3">
+                <h1 class="h1 text-gradient"><%: Page.Title %></h1>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="ExtraScript" runat="server">
+    <asp:ContentPlaceHolder ID="ExtraScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

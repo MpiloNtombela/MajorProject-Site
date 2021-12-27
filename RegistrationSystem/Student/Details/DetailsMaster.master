@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Student/StudentMaster.master" AutoEventWireup="true" CodeBehind="DetailsMaster.master.cs" Inherits="RegistrationSystem.Student.Details.DetailsMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ExtraStyles" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraStyles"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container-lg text-center p-0">
+        <div class="banner main-gradient"></div>
+        <div class="card mt-5 col-xl-10 mx-auto shadow-sm" style="min-height: 90vh">
+            <div class="card-body px-2 px-sm-3">
+                <h1 class="h1 text-gradient"><%: Page.Title %></h1>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ClientContent" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ClientContent"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ExtraScript" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraScript"></asp:ContentPlaceHolder>
+</asp:Content>

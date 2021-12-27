@@ -1,0 +1,7 @@
+﻿CREATE TRIGGER [StudentDetails]
+ON [dbo].[StudentDetail]
+INSTEAD OF INSERT
+AS
+BEGIN
+	RETURN
+END

@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AccountBase.master.cs" Inherits="RegistrationSystem.Account.AccountBase" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card rounded">
+                    <div class="card-body p-3">
+                        <p class="text-danger tiny-text">
+                            <asp:Literal runat="server" ID="ErrorMessage" />
+                        </p>
+                        <div class="pb-3">
+                            <h3 class="fw-bold text-center">
+                                <asp:ContentPlaceHolder ID="FormTitle" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </h3>
+                            <div class="text-center mb-3">
+                                <asp:ContentPlaceHolder ID="FormIcon" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                            <asp:ContentPlaceHolder ID="FormFields" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ClientContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ExtraScript" runat="server">
+</asp:Content>

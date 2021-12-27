@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="0adb2d76-8100-467d-9e47-28c4e578fb3f" ChangeDateTime="09/25/2021 03:09:55">
+    <Property Name="ElementName" Value="[dbo].[Subject].[SubjectDiscription]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Subject]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubjectDescription" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81949023-3475-46e9-a09d-5f443495cd2f" ChangeDateTime="10/09/2021 18:33:18">
+    <Property Name="ElementName" Value="[dbo].[Registration].[PaymentPlanID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Registration]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PaymentPlan" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a2ae0976-8516-48b2-ad60-9277354fce0a" ChangeDateTime="10/09/2021 18:41:54">
+    <Property Name="ElementName" Value="[dbo].[RegisteredSubject].[StudentID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RegisteredSubject]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RegistrationID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="74e7959e-a9d0-4821-9b09-c5ad85388911" ChangeDateTime="10/09/2021 19:11:33">
+    <Property Name="ElementName" Value="[dbo].[RegisteredSubject].[RegistrationID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RegisteredSubject]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[StudentID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d37d8c2e-7a93-4576-9790-cdab9fb78983" ChangeDateTime="10/11/2021 13:50:46">
+    <Property Name="ElementName" Value="[dbo].[SupportingDocument].[DocType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SupportingDocument]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FileType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7de31ebf-aa63-48f9-96e5-ac1da45d18bf" ChangeDateTime="10/11/2021 13:52:11">
+    <Property Name="ElementName" Value="[dbo].[Registration].[PaymentPlan]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Registration]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PaymentPlanID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d3ee746-e038-4b5d-8453-7736644ae6b9" ChangeDateTime="11/08/2021 21:53:26">
+    <Property Name="ElementName" Value="[dbo].[FK_Notification_ToAspNet]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Notification]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Notification_ToAspNetUsers]" />
+  </Operation>
+</Operations>

@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "axios@0.21.4",
+      "destination": "lib/axios/",
+      "files": [
+        "axios.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "materialize-stepper@3.1.0",
+      "destination": "lib/materialize-stepper/",
+      "files": [
+        "dist/js/mstepper.min.js",
+        "dist/css/mstepper.min.css"
+      ]
+    },
+    {
+      "library": "mdb-ui-kit@3.9.0",
+      "destination": "lib/mdb-ui-kit/",
+      "files": [
+        "mdb.min.js",
+        "mdb.min.css",
+        "mdb.min.css.map",
+        "mdb.min.js.map"
+      ]
+    },
+    {
+      "library": "materialize@1.0.0",
+      "destination": "lib/materialize/",
+      "files": [
+        "css/materialize.min.css",
+        "js/materialize.min.js"
+      ]
+    },
+    {
+      "library": "pdf.js@2.11.338",
+      "destination": "lib/pdf.js/",
+      "files": [
+        "pdf.min.js",
+        "pdf.worker.min.js"
+      ]
+    },
+    {
+      "library": "jspdf@2.4.0",
+      "destination": "lib/jspdf/",
+      "files": [
+        "jspdf.umd.min.js"
+      ]
+    },
+    {
+      "library": "dompurify@2.3.3",
+      "destination": "lib/dompurify/",
+      "files": [
+        "purify.min.js"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "html2canvas@1.0.0-rc.1",
+      "destination": "lib/html2canvas/",
+      "files": [
+        "dist/html2canvas.min.js"
+      ]
+    },
+    {
+      "library": "Chart.js@3.6.0",
+      "destination": "lib/Chart.js/",
+      "files": [
+        "chart.min.js"
+      ]
+    }
+  ]
+}

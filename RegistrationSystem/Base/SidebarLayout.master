@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SidebarLayout.master.cs" Inherits="RegistrationSystem.Base.SidebarLayout" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ExtraStyles" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ExtraStyles">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="content-container mx-auto">
+        <div id="sidebar" class="sidebar shadow-sm">
+            <div class="h-100 w-100 d-inline-flex flex-column justify-content-start align-items-start">
+                <asp:ContentPlaceHolder ID="SideLinks" runat="server">
+                </asp:ContentPlaceHolder>
+                <span id="btnToggler" class="material-icons-round toggler bg-secondary text-light shadow-sm">chevron_left</span>
+            </div>
+        </div>
+        <div class="main-content">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ClientContent" runat="server">
+    <asp:ContentPlaceHolder ID="ClientContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ExtraScript" runat="server">
+    <script>
+        (() => {
+            const t = document.getElementById('btnToggler');
+            const s = document.getElementById('sidebar');
+            t.addEventListener('click', () => {
+                s.classList.toggle('sidebar-action');
+                if (s.classList.contains('sidebar-action')) {
+                    t.innerText = 'chevron_right';
+                } else {
+                    t.innerText = 'chevron_left';
+                }
+            });
+        })()
+    </script>
+    <asp:ContentPlaceHolder ID="ExtraScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
