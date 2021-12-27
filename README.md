@@ -4,12 +4,6 @@ Final year ISTN (Info Sys & Tech) Major Project ([**screenshots**](#some-screens
 
 A matric upgrade registration system
 
-### Continuous Integration
-
-> Latest project build status/results (from GitHub Actions) for each branch
-
-- **Main** [![Major Project CI](https://github.com/MpiloNtombela/MajorProject/actions/workflows/actions.yml/badge.svg?branch=main)](https://github.com/MpiloNtombela/MajorProject/actions/workflows/actions.yml)
-  
 # Guidelines
  ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-2019%7C2022-purple)
  ![Framework Version](https://img.shields.io/badge/.Net%20Framework-4.8-blue)
